@@ -1,0 +1,15 @@
+[Unit]
+Description=Grill Probe Extender Server
+After=network.target
+StartLimitIntervalSec=0
+
+[Service]
+Type=simple
+Restart=always
+RestartSec=1
+User=pi
+WorkingDirectory=/home/pi/igrill
+ExecStart=/usr/bin/python /home/pi/igrill/server.py
+
+[Install]
+WantedBy=multi-user.target
